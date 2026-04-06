@@ -1,0 +1,652 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\urunler.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\urunler.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\urunler.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\urunler.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\urunler.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\urunler.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\profil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\profil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\odemeyap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\odemeyap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\hesap\\girisyap.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\hesap\\girisyap.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\hesap\\kayitol.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\hesap\\kayitol.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\hesap\\kayitol.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\hesap\\kayitol.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\hesap\\girisyap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\hesap\\girisyap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\siparisler.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\siparisler.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\sistemolustur.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\sistemolustur.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\sepet.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\sepet.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\sistemdetay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\sistemdetay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\profil.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\profil.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\sistemolustur.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\sistemolustur.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\sistemdetay.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\sistemdetay.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\urunler.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\urunler.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\urunekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\urunekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\urunekle.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\urunekle.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\hesap\\cikisyap.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\hesap\\cikisyap.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\hesap\\cikisyap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\hesap\\cikisyap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\pages\\admin\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\pages\\admin\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\migrations\\20260405165309_ilkkurulum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\migrations\\20260405165309_ilkkurulum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\models\\productupgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\models\\productupgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\models\\productfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\models\\productfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\controllers\\api\\productsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\controllers\\api\\productsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|c:\\users\\yusuf\\source\\repos\\ucuzteknoloji\\ucuzteknoloji\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{747B48EE-88A1-431D-9FE3-E95807A6E377}|UcuzTeknoloji\\UcuzTeknoloji.csproj|solutionrelative:ucuzteknoloji\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Urunler.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Urunler.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Urunler.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Urunler.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Urunler.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T14:03:30.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Urunler.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Urunler.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Urunler.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Urunler.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Urunler.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAE8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T14:03:24.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Index.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAgwPcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T16:28:21.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SistemOlustur.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\SistemOlustur.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\SistemOlustur.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\SistemOlustur.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\SistemOlustur.cshtml",
+              "ViewState": "AgIAALYAAAAAAAAAAAAgwN8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T23:14:41.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Program.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Program.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Program.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:25:08.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GirisYap.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\GirisYap.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Hesap\\GirisYap.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\GirisYap.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Hesap\\GirisYap.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAACZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T17:44:15.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "KayitOl.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\KayitOl.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Hesap\\KayitOl.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\KayitOl.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Hesap\\KayitOl.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAACZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T17:44:07.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KayitOl.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\KayitOl.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Hesap\\KayitOl.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\KayitOl.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Hesap\\KayitOl.cshtml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAIwDcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T17:44:23.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GirisYap.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\GirisYap.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Hesap\\GirisYap.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\GirisYap.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Hesap\\GirisYap.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T17:44:47.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OdemeYap.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\OdemeYap.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\OdemeYap.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\OdemeYap.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\OdemeYap.cshtml",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAgwMYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T13:10:25.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Profil.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Profil.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Profil.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Profil.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Profil.cshtml",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAQwJwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T12:56:31.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Urunler.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Urunler.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\Urunler.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Urunler.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\Urunler.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC4AAACeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T18:31:29.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SistemOlustur.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\SistemOlustur.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\SistemOlustur.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\SistemOlustur.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\SistemOlustur.cshtml.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGcAAACWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T23:16:35.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Urunler.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Urunler.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\Urunler.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Urunler.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\Urunler.cshtml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAE0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T18:31:40.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Siparisler.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Siparisler.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\Siparisler.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Siparisler.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\Siparisler.cshtml",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwGIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T13:22:28.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAC4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T17:01:42.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UrunEkle.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\UrunEkle.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\UrunEkle.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\UrunEkle.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\UrunEkle.cshtml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwDYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:28:15.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SistemDetay.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\SistemDetay.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\SistemDetay.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\SistemDetay.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\SistemDetay.cshtml",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAWwOIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T12:21:31.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Index.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwCsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T16:27:01.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Sepet.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Sepet.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Sepet.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Sepet.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Sepet.cshtml",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAgwHEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T12:57:14.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Profil.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Profil.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Profil.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Profil.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Profil.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T12:56:46.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:22:18.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SistemDetay.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\SistemDetay.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\SistemDetay.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\SistemDetay.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\SistemDetay.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T12:21:39.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UrunEkle.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\UrunEkle.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\UrunEkle.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\UrunEkle.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\UrunEkle.cshtml",
+              "ViewState": "AgIAAMUAAAAAAAAAAADgv9cAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T16:27:44.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T17:05:24.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CikisYap.cshtml",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\CikisYap.cshtml",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Hesap\\CikisYap.cshtml",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\CikisYap.cshtml",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Hesap\\CikisYap.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-05T17:50:02.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:28:29.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CikisYap.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\CikisYap.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Hesap\\CikisYap.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Hesap\\CikisYap.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Hesap\\CikisYap.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T17:50:31.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Repositories\\Repository.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Repositories\\Repository.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Repositories\\Repository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAD4vxwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:24:43.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Models\\Category.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:17:18.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Pages\\Admin\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Pages\\Admin\\Index.cshtml.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Pages\\Admin\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:28:04.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Models\\Product.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:17:43.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ProductsApiController.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Controllers\\Api\\ProductsApiController.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Controllers\\Api\\ProductsApiController.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Controllers\\Api\\ProductsApiController.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Controllers\\Api\\ProductsApiController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:26:31.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\appsettings.json",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\appsettings.json",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\appsettings.json",
+              "RelativeToolTip": "UcuzTeknoloji\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-05T16:49:50.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ProductFeature.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Models\\ProductFeature.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Models\\ProductFeature.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Models\\ProductFeature.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Models\\ProductFeature.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:51:50.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ProductUpgrade.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Models\\ProductUpgrade.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Models\\ProductUpgrade.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Models\\ProductUpgrade.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Models\\ProductUpgrade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:52:18.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20260405165309_IlkKUrulum.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Migrations\\20260405165309_IlkKUrulum.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Migrations\\20260405165309_IlkKUrulum.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Migrations\\20260405165309_IlkKUrulum.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Migrations\\20260405165309_IlkKUrulum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:53:10.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "UcuzTeknoloji\\Repositories\\IRepository.cs",
+              "ToolTip": "C:\\Users\\YUSUF\\source\\repos\\UcuzTeknoloji\\UcuzTeknoloji\\Repositories\\IRepository.cs",
+              "RelativeToolTip": "UcuzTeknoloji\\Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:24:13.293Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

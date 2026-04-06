@@ -1,0 +1,207 @@
+﻿@page
+@{
+    ViewData["Title"] = "Ödeme Sayfası";
+}
+
+<style>
+    body 
+    { 
+        background-color: #0b0b0b; color: #fff; 
+    }
+    .odeme-karti 
+    { 
+        background-color: #151515;
+        border: 1px solid #333;
+        border-radius: 10px; 
+        padding: 30px;
+    }
+    .form-control, .form-select 
+    { 
+        background-color: #1e1e1e; 
+        border: 1px solid #444; 
+        color: #fff; 
+        padding: 12px;
+    
+    }
+    .form-control:focus, .form-select:focus
+    { 
+        background-color: #252525;
+        border-color: #f96302; 
+        color: #fff; 
+        box-shadow: 0 0 8px rgba(249, 99, 2, 0.5);
+    }
+    .kart-gorseli
+    { 
+        background: linear-gradient(135deg, #2b2b2b, #1a1a1a); 
+        border: 1px solid #444; 
+        border-radius: 15px; 
+        padding: 20px; 
+        margin-bottom: 25px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .modal-content
+    { 
+        background-color: #151515;
+        border: 1px solid #f96302;
+        border-radius: 15px;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="odeme-karti shadow-lg">
+                <input type="hidden" id="aktifKullaniciAdi" value="@User.Identity?.Name" />
+                <h2 class="text-warning border-bottom border-secondary pb-3 mb-4">💳 Güvenli Ödeme Adımı</h2>
+
+                <h5 class="text-light mb-3">📍 Teslimat Adresi Seçin</h5>
+                <select class="form-select mb-5 border-info">
+                    <option value="1">Ev Adresi - Onurkent Mah. Başakşehir Blv. Kat:3 Daire:12 İstanbul</option>
+                    <option value="2">İş Adresi - Maslak Mah. AOS 55. Sokak Sarıyer / İstanbul</option>
+                </select>
+
+                <h5 class="text-light mb-3">💳 Kredi / Banka Kartı Bilgileri</h5>
+                <div class="kart-gorseli">
+                    <div class="mb-3">
+                        <label class="text-muted small fw-bold mb-1">Kart Üzerindeki İsim</label>
+                        <input type="text" id="kartIsim" class="form-control bg-dark border-secondary" placeholder="Örn: YUSUF ..." required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="text-muted small fw-bold mb-1">Kart Numarası</label>
+                        <input type="text" id="kartNo" class="form-control bg-dark border-secondary" placeholder="0000 0000 0000 0000" maxlength="19" required />
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="text-muted small fw-bold mb-1">Son Kullanma Tarihi</label>
+                            <input type="text" id="sonKullanma" class="form-control bg-dark border-secondary" placeholder="AA/YY" maxlength="5" required />
+                        </div>
+                        <div class="col-6">
+                            <label class="text-muted small fw-bold mb-1">CVV</label>
+                            <input type="password" id="cvv" class="form-control bg-dark border-secondary" placeholder="***" maxlength="3" required />
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary btn-lg w-100 fw-bold fs-4 text-dark shadow-lg" id="btnOdemeYap" onclick="OdemeIsleminiBaslat()" disabled>
+                    💳 Bilgileri Doldurun...
+                </button>
+                <div class="form-check mb-5 mt-4">
+                    <input class="form-check-input bg-dark border-warning" type="checkbox" id="ucdSecure">
+                    <label class="form-check-label text-light ms-2" for="ucdSecure">
+                        🔒 İşlemimi <strong>3D Secure</strong> ile doğrulamak istiyorum. <br>
+                        <small class="text-muted">Telefonunuza SMS ile onay kodu gönderilecektir.</small>
+                    </label>
+                </div>
+
+                <hr class="border-secondary mb-4" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="basariModali" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+            <div class="modal-body">
+                <h1 class="display-1 text-success mb-3">🎉</h1>
+                <h2 class="text-warning fw-bold mb-3">Tebrikler!</h2>
+                <p class="text-light fs-5">Ödemeniz başarıyla tamamlanmıştır.</p>
+                <p class="text-muted mb-4">Sisteminiz en kısa sürede hazırlanıp Başakşehir'deki adresinize kargoya verilecektir. Bizi tercih ettiğiniz için teşekkür ederiz.</p>
+                <button type="button" class="btn btn-outline-warning w-100 fw-bold" onclick="SiparisiBitir()">Siparişlerim Sayfasına Git</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let sepetToplamFiyati = 0;
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let sepet = JSON.parse(localStorage.getItem('UcuzTeknolojiSepet')) || [];
+        if (sepet.length === 0) { window.location.href = "/Index"; return; }
+        sepet.forEach(urun => { sepetToplamFiyati += parseFloat(urun.fiyat); });
+        document.getElementById('btnOdemeYap').innerHTML = `💳 ${sepetToplamFiyati.toLocaleString('tr-TR')} ₺ ÖDE`;
+    });
+
+    const kartIsim = document.getElementById('kartIsim');
+    const kartNo = document.getElementById('kartNo');
+    const sonKullanma = document.getElementById('sonKullanma');
+    const cvv = document.getElementById('cvv');
+    const btnOdemeYap = document.getElementById('btnOdemeYap');
+
+    function FormKontrol() {
+        
+        if (kartIsim.value.trim().length > 2 && kartNo.value.length === 19 && sonKullanma.value.length === 5 && cvv.value.length === 3) {
+            btnOdemeYap.disabled = false;
+            btnOdemeYap.classList.replace('btn-secondary', 'btn-warning');
+        } else {
+            btnOdemeYap.disabled = true;
+            btnOdemeYap.classList.replace('btn-warning', 'btn-secondary');
+        }
+    }
+
+  
+    kartNo.addEventListener('input', function (e) {
+        let deger = e.target.value.replace(/\D/g, '').substring(0, 16); 
+        e.target.value = deger.match(/.{1,4}/g)?.join(' ') || deger;
+        FormKontrol();
+    });
+
+    
+    sonKullanma.addEventListener('input', function (e) {
+        let deger = e.target.value.replace(/\D/g, '').substring(0, 4);
+        if (deger.length >= 3) {
+            e.target.value = deger.substring(0, 2) + '/' + deger.substring(2, 4);
+        } else {
+            e.target.value = deger;
+        }
+        FormKontrol();
+    });
+
+  
+    kartIsim.addEventListener('input', FormKontrol);
+    cvv.addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+        FormKontrol();
+    });
+
+  
+    function OdemeIsleminiBaslat() {
+        btnOdemeYap.innerHTML = `⏳ Ödeme Onaylanıyor...`;
+        btnOdemeYap.classList.replace('btn-warning', 'btn-secondary');
+        btnOdemeYap.disabled = true;
+
+        setTimeout(() => {
+            var myModal = new bootstrap.Modal(document.getElementById('basariModali'));
+            myModal.show();
+        }, 1500);
+    }
+
+    function SiparisiBitir() {
+        let sepet = JSON.parse(localStorage.getItem('UcuzTeknolojiSepet')) || [];
+        let siparisler = JSON.parse(localStorage.getItem('UcuzTeknolojiSiparisler')) || [];
+
+        let adresKutusu = document.querySelector('select.border-info');
+        let secilenAdres = adresKutusu.options[adresKutusu.selectedIndex].text;
+        let musteriAdi = document.getElementById('kartIsim').value;
+
+     
+        let hesapSahibi = document.getElementById('aktifKullaniciAdi').value;
+
+        if (sepet.length > 0) {
+            let yeniSiparis = {
+                siparisNo: "SP-" + Math.floor(Math.random() * 900000 + 100000),
+                tarih: new Date().toLocaleDateString('tr-TR') + " - " + new Date().toLocaleTimeString('tr-TR'),
+                musteri: musteriAdi,
+                adres: secilenAdres,
+                hesapKullaniciAdi: hesapSahibi,
+                toplam: sepetToplamFiyati,
+                urunler: sepet
+            };
+            siparisler.push(yeniSiparis);
+            localStorage.setItem('UcuzTeknolojiSiparisler', JSON.stringify(siparisler));
+            localStorage.removeItem('UcuzTeknolojiSepet');
+        }
+
+        window.location.href = "/Profil";
+    }
+</script>

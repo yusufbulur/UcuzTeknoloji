@@ -1,0 +1,165 @@
+﻿@page
+@model UcuzTeknoloji.Pages.UrunlerModel
+@{
+    ViewData["Title"] = "Tüm Ürünler";
+}
+
+<style>
+    body { background-color: #0b0b0b; color: #fff; }
+    .vitrin-karti { background-color: #151515; border: 1px solid #333; transition: transform 0.3s, box-shadow 0.3s; border-radius: 8px; overflow: hidden; }
+    .vitrin-karti:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(249, 99, 2, 0.2); border-color: #f96302; }
+    .urun-resim-alani { background-color: #fff; padding: 20px; text-align: center; height: 200px; display: flex; align-items: center; justify-content: center; }
+    .urun-resim-alani img { max-height: 100%; max-width: 100%; object-fit: contain; }
+    .filtre-menusu a { color: #ccc; text-decoration: none; padding: 8px 15px; display: block; border-radius: 5px; transition: 0.2s; }
+    .filtre-menusu a:hover, .filtre-menusu a.aktif { background-color: #f96302; color: #fff; font-weight: bold; }
+</style>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+
+        <div class="col-md-3 mb-4">
+            <div class="bg-dark border border-secondary p-4 rounded sticky-top" style="top: 20px;">
+                <h5 class="text-warning border-bottom border-warning pb-2 mb-3">Kategoriler</h5>
+
+                <div class="filtre-menusu">
+                    <a href="javascript:void(0)" onclick="Filtrele('Tumu', '')" id="filtre-tumu" class="aktif">Tüm Ürünler</a>
+
+                    <h6 class="text-muted mt-4 mb-2 small fw-bold">SİSTEM & KASA</h6>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'Hazır Sistem')">Hazır Sistemler</a>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'Kasa')">Boş Kasalar</a>
+
+                    <h6 class="text-muted mt-4 mb-2 small fw-bold">BİLGİSAYAR PARÇALARI</h6>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'İşlemci')">İşlemciler (CPU)</a>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'Anakart')">Anakartlar</a>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'Ekran Kartı')">Ekran Kartları (GPU)</a>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'RAM')">RAM Bellekler</a>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'SSD')">SSD / Depolama</a>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'Güç Kaynağı')">Güç Kaynakları (PSU)</a>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'Soğutucu')">Soğutucular</a>
+
+                    <h6 class="text-muted mt-4 mb-2 small fw-bold">OYUNCU EKİPMANLARI</h6>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'Kulaklık')">Oyuncu Kulaklıkları</a>
+                    <a href="javascript:void(0)" onclick="Filtrele('OzelSablon', 'Mouse')">Gaming Mouse</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h3 class="text-light mb-4" id="kategoriBasligi">Tüm Ürünler</h3>
+
+            <div class="row" id="urunTablosu">
+                @foreach (var item in Model.Products)
+                {
+                
+                    var sablonDegeri = item.Features.FirstOrDefault(f => f.FeatureName == "KategoriŞablonu")?.FeatureValue ?? "";
+
+                    <div class="col-md-4 mb-4 urun-kart-alani" data-sablon="@sablonDegeri">
+                        <div class="vitrin-karti h-100 d-flex flex-column position-relative">
+
+                            @if (item.Stock < 5 && item.Stock > 0)
+                            {
+                                <span class="badge bg-danger position-absolute top-0 end-0 m-2" style="z-index: 10;">Son @item.Stock Ürün!</span>
+                            }
+
+                            <div class="urun-resim-alani">
+                                <img src="/img/@(string.IsNullOrEmpty(item.ImagePath) ? "yok.png" : item.ImagePath)" />
+                            </div>
+
+                            <div class="p-3 d-flex flex-column flex-grow-1 bg-dark">
+                                @if (item.CategoryId == 1 || sablonDegeri == "Özel Hazır Sistem")
+                                {
+                                    <a href="/SistemDetay/@item.Id" class="text-decoration-none">
+                                        <h6 class="text-warning fw-bold mb-2" style="transition: 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ffc107'">
+                                            @item.Name <small class="text-muted ms-1">➔ İncele ve Özelleştir</small>
+                                        </h6>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <h6 class="text-light fw-bold mb-2">@item.Name</h6>
+                                }
+
+                                <div class="mt-auto">
+                                    <h4 class="text-warning fw-bold mb-3">@item.Price.ToString("N0") ₺</h4>
+
+                                    <button type="button" onclick="HizliSepeteAt(event, '@item.Name', @item.Price.ToString().Replace(",", "."))" class="btn btn-warning w-100 fw-bold shadow">
+                                        🛒 SEPETE EKLE
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+                @if (!Model.Products.Any())
+                {
+                    <div class="col-12 text-center p-5">
+                        <h2 class="text-muted">Buralar çok ıssız...</h2>
+                        <p class="text-light">Henüz satışta olan bir ürün bulunmuyor.</p>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+ 
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const arananKategori = urlParams.get('kategori');
+
+        if (arananKategori) {
+           
+            Filtrele('OzelSablon', arananKategori);
+        }
+    });
+
+    
+    function Filtrele(tur, deger) {
+        let kartlar = document.querySelectorAll(".urun-kart-alani");
+        let arananDeger = deger.toLowerCase().trim();
+        let baslik = document.getElementById("kategoriBasligi");
+
+       
+        document.querySelectorAll('.filtre-menusu a').forEach(a => a.classList.remove('aktif'));
+
+        kartlar.forEach(kart => {
+            if (tur === 'Tumu') {
+                kart.style.display = "block";
+                baslik.innerText = "Tüm Ürünler";
+                document.getElementById('filtre-tumu').classList.add('aktif');
+            }
+            else if (tur === 'OzelSablon') {
+                let kartinSablonu = (kart.getAttribute('data-sablon') || "").toLowerCase().trim();
+                if (kartinSablonu === arananDeger || (arananDeger === "hazır sistem" && kartinSablonu === "özel hazır sistem")) {
+                    kart.style.display = "block";
+                }
+                else {
+                    kart.style.display = "none";
+                }
+                baslik.innerText = deger + " Modelleri";
+
+              
+                event && event.target && event.target.classList && event.target.classList.add('aktif');
+            }
+        });
+    }
+
+   
+    function HizliSepeteAt(e, urunAdi, fiyat) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        let sepet = JSON.parse(localStorage.getItem('UcuzTeknolojiSepet')) || [];
+        sepet.push({ isim: urunAdi, fiyat: fiyat });
+        localStorage.setItem('UcuzTeknolojiSepet', JSON.stringify(sepet));
+
+        let navSepet = document.getElementById('navSepetSayisi');
+        if(navSepet) navSepet.innerText = sepet.length;
+
+        alert("✅ " + urunAdi + " sepete eklendi!");
+    }
+</script>

@@ -1,0 +1,270 @@
+﻿@page
+@model UcuzTeknoloji.Pages.Admin.SistemOlusturModel
+@{
+    ViewData["Title"] = "Gelişmiş Sistem Toplama";
+}
+
+<style>
+    .admin-panel-bg {
+        background-color: #121212;
+        border-radius: 10px;
+        padding: 30px;
+        border: 1px solid #333;
+    }
+
+    .komponent-baslik {
+        color: #28a745;
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    .hesap-kutusu {
+        background: #1e1e1e;
+        border: 1px solid #ff6600;
+        padding: 15px;
+        border-radius: 8px;
+    }
+</style>
+
+<div class="container mt-4 mb-5">
+    <div class="admin-panel-bg shadow-lg">
+        <h3 class="text-light border-bottom border-secondary pb-3 mb-4">🖥️ Profesyonel Sistem Toplama Robotu</h3>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-5 border-end border-secondary pe-md-4">
+                    <h5 class="text-success mb-4 border-bottom border-success pb-2">1. Sistem Profili ve Fiyatlandırma</h5>
+
+                    <label class="komponent-baslik">Sistemin Satış Adı</label>
+                    <input type="text" asp-for="SistemAdi" class="form-control bg-dark text-light border-secondary mb-4" placeholder="Örn: Dragos Pro V2" required />
+
+                    <div class="hesap-kutusu mb-4">
+                        <label class="text-warning fw-bold small">Parçaların Toplam Maliyeti (Otomatik Hesaplanır)</label>
+                        <input type="text" id="toplamMaliyetGosterge" class="form-control bg-transparent text-light border-0 fs-3 fw-bold" value="0 ₺" readonly />
+
+                        <label class="text-success fw-bold small mt-3">🔥 Vitrin Satış Fiyatı (Üstü çizili fiyat için)</label>
+                        <input type="number" asp-for="Fiyat" id="satisFiyati" class="form-control bg-dark border-success text-success fw-bold fs-4" placeholder="Örn: 29999" required />
+                        <span class="text-muted small">Maliyetin altında satıyorsanız indirimli sistem olarak algılanır.</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="text-danger fw-bold small">Sistem Maksimum Stok Adedi</label>
+                        <input type="number" asp-for="Stok" id="maksimumStokGosterge" class="form-control bg-dark text-danger border-danger fw-bold" value="0" readonly />
+                        <span class="text-muted small">Stoğu en düşük olan bileşene göre kısıtlanmıştır!</span>
+                    </div>
+
+                    <label class="komponent-baslik text-warning">Sistem Kapak Görseli</label>
+                    <input type="file" name="UrunResmi" class="form-control bg-dark border-warning mb-4 text-light" required />
+                </div>
+
+                <div class="col-md-7 ps-md-4">
+                    <h5 class="text-success mb-3 border-bottom border-success pb-2">2. Sistem Bileşenlerini Seç</h5>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="komponent-baslik">📦 Kasa</label>
+                            <select name="Bilesen_Kasa" class="form-select bg-dark text-light bilesen-secici" onchange="OtoHesapla()" required>
+                                <option value="" data-fiyat="0" data-stok="9999">-- Kasa Seç --</option>
+                                @foreach (var p in Model.Kasalar)
+                                {
+                                    <option value="@p.Name" data-fiyat="@p.Price" data-stok="@p.Stock">@p.Name (@p.Price ₺)</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="komponent-baslik">🧠 İşlemci (CPU)</label>
+                            <select name="Bilesen_Islemci" class="form-select bg-dark text-light bilesen-secici" onchange="OtoHesapla()" required>
+                                <option value="" data-fiyat="0" data-stok="9999">-- İşlemci Seç --</option>
+                                @foreach (var p in Model.Islemciler)
+                                {
+                                    <option value="@p.Name" data-fiyat="@p.Price" data-stok="@p.Stock">@p.Name (@p.Price ₺)</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="komponent-baslik">🗄️ Anakart</label>
+                            <select name="Bilesen_Anakart" class="form-select bg-dark text-light bilesen-secici" onchange="OtoHesapla()" required>
+                                <option value="" data-fiyat="0" data-stok="9999">-- Anakart Seç --</option>
+                                @foreach (var p in Model.Anakartlar)
+                                {
+                                    <option value="@p.Name" data-fiyat="@p.Price" data-stok="@p.Stock">@p.Name (@p.Price ₺)</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="komponent-baslik">🎮 Ekran Kartı</label>
+                            <select name="Bilesen_EkranKarti" class="form-select bg-dark text-light bilesen-secici" onchange="OtoHesapla()" required>
+                                <option value="" data-fiyat="0" data-stok="9999">-- Ekran Kartı Seç --</option>
+                                @foreach (var p in Model.EkranKartlari)
+                                {
+                                    <option value="@p.Name" data-fiyat="@p.Price" data-stok="@p.Stock">@p.Name (@p.Price ₺)</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="komponent-baslik">🚀 RAM</label>
+                            <select name="Bilesen_Ram" class="form-select bg-dark text-light bilesen-secici" onchange="OtoHesapla()" required>
+                                <option value="" data-fiyat="0" data-stok="9999">-- RAM Seç --</option>
+                                @foreach (var p in Model.Ramler)
+                                {
+                                    <option value="@p.Name" data-fiyat="@p.Price" data-stok="@p.Stock">@p.Name (@p.Price ₺)</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="komponent-baslik">💾 M.2 / SSD</label>
+                            <select name="Bilesen_SSD" class="form-select bg-dark text-light bilesen-secici" onchange="OtoHesapla()" required>
+                                <option value="" data-fiyat="0" data-stok="9999">-- SSD Seç --</option>
+                                @foreach (var p in Model.Ssdler)
+                                {
+                                    <option value="@p.Name" data-fiyat="@p.Price" data-stok="@p.Stock">@p.Name (@p.Price ₺)</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="komponent-baslik">⚡ Güç Kaynağı</label>
+                            <select name="Bilesen_PSU" class="form-select bg-dark text-light bilesen-secici" onchange="OtoHesapla()" required>
+                                <option value="" data-fiyat="0" data-stok="9999">-- PSU Seç --</option>
+                                @foreach (var p in Model.GucKaynaklari)
+                                {
+                                    <option value="@p.Name" data-fiyat="@p.Price" data-stok="@p.Stock">@p.Name (@p.Price ₺)</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <h5 class="text-info mt-4 mb-3 border-bottom border-info pb-2">3. Ekstralar (Hediye ve Özel İndirim)</h5>
+
+                    <div class="bg-dark p-3 rounded border border-secondary mb-4">
+                        <label class="text-light fw-bold small">Sistem Hediyesi (Opsiyonel)</label>
+                        <select name="HediyeUrunId" class="form-select bg-secondary text-light mt-1">
+                            <option value="">-- Hediye Yok --</option>
+                            @foreach (var grup in Model.EkstraUrunlerSözlügü)
+                            {
+                                <optgroup label="Şablon: @grup.Key">
+                                    @foreach (var urun in grup.Value)
+                                    {
+                                        <option value="@urun.Name">🎁 @urun.Name</option>
+                                    }
+                                </optgroup>
+                            }
+                        </select>
+
+                        <hr class="border-secondary my-3" />
+
+                        <label class="text-warning fw-bold small">Yanında Alırsan İndirimli Ürün (Opsiyonel)</label>
+                        <select id="indirimliUrunSecici" name="IndirimliUrunAd" class="form-select bg-secondary text-light mt-1 mb-2">
+                            <option value="">-- Ürün Seç --</option>
+                            @foreach (var grup in Model.EkstraUrunlerSözlügü)
+                            {
+                                <optgroup label="Şablon: @grup.Key">
+                                    @foreach (var urun in grup.Value)
+                                    {
+                                        <option value="@urun.Name">@urun.Name (@urun.Price ₺)</option>
+                                    }
+                                </optgroup>
+                            }
+                        </select>
+                        <div class="input-group">
+                            <span class="input-group-text bg-warning text-dark fw-bold">%</span>
+                            <input type="number" name="IndirimYuzdesi" class="form-control bg-secondary text-light" placeholder="İndirim Yüzdesi (Örn: 20)" min="1" max="99" />
+                        </div>
+                    </div>
+                </div>
+                <h5 class="text-danger mt-4 mb-3 border-bottom border-danger pb-2">4. Özelleştirme (Upgrade) Seçenekleri</h5>
+                <p class="text-muted small">Kullanıcının sistemin içindeki parçayı değiştirip yükseltebileceği alternatifleri seçin. (Ctrl'ye basılı tutarak birden fazla seçebilirsiniz)</p>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="komponent-baslik text-danger">Alternatif İşlemciler</label>
+                        <select name="Alternatif_Islemci" class="form-select bg-dark text-light border-danger" multiple style="height: 100px;">
+                            @foreach (var p in Model.Islemciler)
+                            {
+                                <option value="@p.Name">@p.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="komponent-baslik text-danger">Alternatif Ekran Kartları</label>
+                        <select name="Alternatif_EkranKarti" class="form-select bg-dark text-light border-danger" multiple style="height: 100px;">
+                            @foreach (var p in Model.EkranKartlari)
+                            {
+                                <option value="@p.Name">@p.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="komponent-baslik text-danger">Alternatif RAM'ler</label>
+                        <select name="Alternatif_Ram" class="form-select bg-dark text-light border-danger" multiple style="height: 100px;">
+                            @foreach (var p in Model.Ramler)
+                            {
+                                <option value="@p.Name">@p.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="komponent-baslik text-danger">Alternatif Anakartlar</label>
+                        <select name="Alternatif_Anakart" class="form-select bg-dark text-light border-danger" multiple style="height: 100px;">
+                            @foreach (var p in Model.Anakartlar)
+                            {
+                                <option value="@p.Name">@p.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="komponent-baslik text-danger">Alternatif Depolama (SSD/HDD)</label>
+                        <select name="Alternatif_Depolama" class="form-select bg-dark text-light border-danger" multiple style="height: 100px;">
+                            @foreach (var p in Model.Ssdler.Concat(Model.Hddler))
+                            {
+                                <option value="@p.Name">@p.Name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-success btn-lg fw-bold w-100 mt-4 text-dark shadow fs-4">⚙️ Sistemi Topla ve Vitrine Fırlat!</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    
+    function OtoHesapla() {
+        let seciciler = document.querySelectorAll(".bilesen-secici");
+        let toplamFiyat = 0;
+        let minimumStok = 9999; 
+        let parcaSecildiMi = false;
+
+        seciciler.forEach(secici => {
+            let secilenOption = secici.options[secici.selectedIndex];
+
+           
+            if (secilenOption.value !== "") {
+                parcaSecildiMi = true;
+                let fiyat = parseFloat(secilenOption.getAttribute("data-fiyat")) || 0;
+                let stok = parseInt(secilenOption.getAttribute("data-stok")) || 0;
+
+                toplamFiyat += fiyat;
+
+               
+                if(stok < minimumStok) {
+                    minimumStok = stok;
+                }
+            }
+        });
+
+        if (parcaSecildiMi) {
+            document.getElementById("toplamMaliyetGosterge").value = toplamFiyat.toLocaleString('tr-TR') + " ₺";
+            document.getElementById("satisFiyati").value = toplamFiyat; 
+            document.getElementById("maksimumStokGosterge").value = minimumStok; 
+        } else {
+            document.getElementById("toplamMaliyetGosterge").value = "0 ₺";
+            document.getElementById("satisFiyati").value = "";
+            document.getElementById("maksimumStokGosterge").value = "0";
+        }
+    }
+</script>

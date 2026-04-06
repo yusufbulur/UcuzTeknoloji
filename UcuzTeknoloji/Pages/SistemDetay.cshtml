@@ -1,0 +1,246 @@
+﻿@page "{id:int}"
+@model UcuzTeknoloji.Pages.SistemDetayModel
+@{
+    ViewData["Title"] = Model.Sistem.Name;
+}
+
+<style>
+    body {
+        background-color: #0b0b0b;
+        color: #fff;
+    }
+
+    .sticky-sepet {
+        position: sticky;
+        top: 20px;
+        background-color: #151515;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 25px;
+    }
+
+    .fiyat-gosterge {
+        background-color: #f96302;
+        color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 2.2rem;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    /* Özel Tasarım Seçim Kartları (Radyo Butonları Gizleyip Karta Çevirme) */
+    .radio-card input[type="radio"] {
+        display: none;
+    }
+
+    .radio-card label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border: 2px solid #222;
+        border-radius: 8px;
+        padding: 12px;
+        background: #121212;
+        transition: all 0.3s;
+        width: 100%;
+    }
+
+        .radio-card label:hover {
+            border-color: #555;
+            background: #1a1a1a;
+        }
+
+    .radio-card input[type="radio"]:checked + label {
+        border-color: #f96302;
+        background: rgba(249, 99, 2, 0.05);
+    }
+
+    .component-img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 15px;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <input type="hidden" name="SistemId" value="@Model.Sistem.Id" />
+        <input type="hidden" id="gizliToplamFiyat" name="GuncelFiyat" value="@Model.Sistem.Price" />
+
+        <div class="col-lg-8 pe-lg-5">
+
+            <div class="bg-white p-4 rounded text-center mb-5 border border-secondary shadow">
+                <img src="/img/@Model.Sistem.ImagePath" class="img-fluid rounded" style="max-height: 450px; object-fit: contain;" />
+            </div>
+
+            <h3 class="text-warning border-bottom border-warning pb-2 mb-4">⚙️ Sistemi Özelleştir</h3>
+
+            <h5 class="text-light mt-4 mb-3 border-bottom border-secondary pb-2">Kurulum ve Montaj Hizmeti</h5>
+            <div class="row">
+                <div class="col-12 mb-2 radio-card">
+                    <input type="radio" name="SecilenMontaj" id="montaj_1" value="Kurup Gönder" data-fiyat-farki="0" onchange="FiyatGuncelle()" checked>
+                    <label for="montaj_1">
+                        <h1 class="m-0 me-3">🛠️</h1>
+                        <div class="flex-grow-1"><h6 class="m-0 text-light fw-bold">Sistemi Kurup Gönder</h6><small class="text-muted">Testleri yapılmış, tak çalıştır hazır sistem.</small></div>
+                        <div class="text-success fw-bold">0 ₺</div>
+                    </label>
+                </div>
+                <div class="col-12 mb-2 radio-card">
+                    <input type="radio" name="SecilenMontaj" id="montaj_2" value="Demonte Gönder" data-fiyat-farki="0" onchange="FiyatGuncelle()">
+                    <label for="montaj_2">
+                        <h1 class="m-0 me-3">📦</h1>
+                        <div class="flex-grow-1"><h6 class="m-0 text-light fw-bold">Parçaları Kutularında Demonte Gönder</h6><small class="text-muted">Kendim toplamak istiyorum.</small></div>
+                        <div class="text-success fw-bold">0 ₺</div>
+                    </label>
+                </div>
+            </div>
+
+            <h5 class="text-light mt-4 mb-3 border-bottom border-secondary pb-2">Kablolama Hizmeti</h5>
+            <div class="row">
+                <div class="col-12 mb-2 radio-card">
+                    <input type="radio" name="SecilenKablo" id="kablo_1" value="Standart" data-fiyat-farki="0" onchange="FiyatGuncelle()" checked>
+                    <label for="kablo_1">
+                        <h1 class="m-0 me-3">🔌</h1>
+                        <div class="flex-grow-1"><h6 class="m-0 text-light fw-bold">Standart Kablolama</h6><small class="text-muted">Klasik, düzenli kablo tertibatı.</small></div>
+                        <div class="text-success fw-bold">0 ₺</div>
+                    </label>
+                </div>
+                <div class="col-12 mb-2 radio-card">
+                    <input type="radio" name="SecilenKablo" id="kablo_2" value="Pro Kablolama" data-fiyat-farki="899" onchange="FiyatGuncelle()">
+                    <label for="kablo_2">
+                        <h1 class="m-0 me-3">⚡</h1>
+                        <div class="flex-grow-1"><h6 class="m-0 text-warning fw-bold">Pro Sleeved Kablolama Dizaynı</h6><small class="text-muted">Özel renkli örgü kablolar ile kusursuz görünüm.</small></div>
+                        <div class="text-danger fw-bold">+899 ₺</div>
+                    </label>
+                </div>
+            </div>
+
+            @{
+                void BilesenKartiOlustur(string bilesenTuru, string alternatifAdi)
+                {
+                    var varsayilanAd = Model.Sistem.Features.FirstOrDefault(f => f.FeatureName == bilesenTuru)?.FeatureValue;
+                    if (string.IsNullOrEmpty(varsayilanAd)) return;
+
+                    var varsayilanUrun = Model.TumParcalar.FirstOrDefault(p => p.Name == varsayilanAd);
+                    var alternatifler = Model.Sistem.Features.Where(f => f.FeatureName == alternatifAdi).ToList();
+
+                    if (varsayilanUrun != null)
+                    {
+                        <h5 class="text-info mt-5 mb-3 border-bottom border-info pb-2">@bilesenTuru</h5>
+                        <div class="row">
+                            <div class="col-12 mb-3 radio-card">
+                                <input type="radio" name="Secilen_@bilesenTuru.Replace(" ", "")" id="def_@varsayilanUrun.Id" value="@varsayilanUrun.Name" data-fiyat-farki="0" onchange="FiyatGuncelle()" checked>
+                                <label for="def_@varsayilanUrun.Id">
+                                    <img src="/img/@(string.IsNullOrEmpty(varsayilanUrun.ImagePath) ? "yok.png" : varsayilanUrun.ImagePath)" class="component-img">
+                                    <div class="flex-grow-1">
+                                        <h6 class="m-0 text-light fw-bold">@varsayilanUrun.Name</h6>
+                                        <small class="text-success fw-bold">Sistemde Seçili Gelen</small>
+                                    </div>
+                                    <div class="text-muted fw-bold">0 ₺</div>
+                                </label>
+                            </div>
+
+                            @foreach (var alt in alternatifler)
+                            {
+                                var altUrun = Model.TumParcalar.FirstOrDefault(p => p.Name == alt.FeatureValue);
+                                if (altUrun != null)
+                                {
+                                    var fark = altUrun.Price - varsayilanUrun.Price;
+                                    var farkMetni = fark > 0 ? $"+{fark:N0} ₺" : $"{fark:N0} ₺";
+                                    var farkRenk = fark > 0 ? "text-danger" : "text-success";
+
+                                    <div class="col-12 mb-2 radio-card">
+                                        <input type="radio" name="Secilen_@bilesenTuru.Replace(" ", "")" id="alt_@altUrun.Id" value="@altUrun.Name" data-fiyat-farki="@fark" onchange="FiyatGuncelle()">
+                                        <label for="alt_@altUrun.Id">
+                                            <img src="/img/@(string.IsNullOrEmpty(altUrun.ImagePath) ? "yok.png" : altUrun.ImagePath)" class="component-img">
+                                            <div class="flex-grow-1">
+                                                <h6 class="m-0 text-light fw-bold">@altUrun.Name</h6>
+                                                <small class="text-warning">Yükseltme / Değişim</small>
+                                            </div>
+                                            <div class="@farkRenk fw-bold fs-5">@farkMetni</div>
+                                        </label>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    }
+                }
+            }
+
+            @{
+                BilesenKartiOlustur("İşlemci", "Alternatif_Islemci");
+                BilesenKartiOlustur("Anakart", "Alternatif_Anakart");
+                BilesenKartiOlustur("Ekran Kartı", "Alternatif_EkranKarti");
+                BilesenKartiOlustur("RAM", "Alternatif_Ram");
+                BilesenKartiOlustur("SSD", "Alternatif_Depolama"); 
+                BilesenKartiOlustur("HDD", "Alternatif_Depolama");
+            }
+        </div>
+
+        <div class="col-lg-4">
+            <div class="sticky-sepet shadow-lg">
+                <h2 class="fw-bold text-light mb-1">@Model.Sistem.Name</h2>
+                <hr class="border-secondary mb-4" />
+
+                <ul class="list-unstyled text-light small mb-4">
+                    <li class="mb-2 text-success fw-bold">✓ Stokta @Model.Sistem.Stock adet var!</li>
+                    <li class="mb-2 text-muted">✓ Ücretsiz Kargo</li>
+                    <li class="mb-2 text-muted">✓ 2 Yıl Türkiye Garantili</li>
+                </ul>
+
+                <div class="text-center text-muted text-decoration-line-through mb-1" style="font-size: 1.5rem;">
+                    @((Model.Sistem.Price * 1.15m).ToString("N0")) ₺
+                </div>
+
+                <div class="fiyat-gosterge mb-4 shadow" id="ekrandakiFiyat">
+                    @Model.Sistem.Price.ToString("N0") ₺
+                </div>
+
+                <button type="button" onclick="SepeteAt()" class="btn btn-warning w-100 fw-bold py-3 fs-4 shadow-lg text-dark">
+                    🛒 SEPETE EKLE
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+   
+    const anaFiyat = @Model.Sistem.Price.ToString().Replace(",", ".");
+
+    function SepeteAt() {
+        let urunAdi = "@Model.Sistem.Name";
+        let seciliFiyat = document.getElementById('gizliToplamFiyat').value;
+
+        let sepet = JSON.parse(localStorage.getItem('UcuzTeknolojiSepet')) || [];
+        sepet.push({ isim: urunAdi, fiyat: seciliFiyat });
+        localStorage.setItem('UcuzTeknolojiSepet', JSON.stringify(sepet));
+
+        alert("Ürün başarıyla sepete eklendi!");
+        window.location.href = "/Sepet"; 
+    }
+
+    function FiyatGuncelle() {
+        let toplamFark = 0;
+        let seciliRadyolar = document.querySelectorAll('input[type="radio"]:checked');      
+        seciliRadyolar.forEach(radyo => {
+            let fark = parseFloat(radyo.getAttribute("data-fiyat-farki")) || 0;
+            toplamFark += fark;
+        });
+
+      
+        let yeniFiyat = anaFiyat + toplamFark;
+
+       
+        document.getElementById('ekrandakiFiyat').innerText = yeniFiyat.toLocaleString('tr-TR') + " ₺";
+
+       
+        document.getElementById('gizliToplamFiyat').value = yeniFiyat;
+    }
+</script>

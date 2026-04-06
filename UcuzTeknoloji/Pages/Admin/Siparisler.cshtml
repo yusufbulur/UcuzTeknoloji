@@ -1,0 +1,99 @@
+﻿@page
+@{
+    ViewData["Title"] = "Gelen Siparişler";
+}
+
+<style>
+    .admin-panel-bg { background-color: #121212; min-height: 80vh; border-radius: 10px; padding: 30px; border: 1px solid #333; }
+    .siparis-karti { background-color: #1a1a1a; border: 1px solid #444; border-left: 5px solid #28a745; border-radius: 8px; margin-bottom: 20px; transition: 0.3s; }
+    .siparis-karti:hover { border-color: #f96302; border-left-color: #f96302; }
+</style>
+
+<div class="container mt-4 mb-5">
+    <div class="admin-panel-bg shadow-lg">
+        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-secondary pb-3">
+            <h3 class="text-light m-0">📦 Gelen Siparişler Yönetimi</h3>
+            <a href="/Admin/Index" class="btn btn-outline-secondary">🔙 Kontrol Merkezine Dön</a>
+        </div>
+
+        <div id="adminSiparisListesi">
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", AdminSiparisleriYukle);
+
+    function AdminSiparisleriYukle() {
+        let siparisler = JSON.parse(localStorage.getItem('UcuzTeknolojiSiparisler')) || [];
+        let alan = document.getElementById('adminSiparisListesi');
+
+        if(siparisler.length === 0) {
+            alan.innerHTML = `
+                <div class="alert alert-dark border border-secondary text-center p-5 mt-4">
+                    <h1 class="display-4 text-muted mb-3">📭</h1>
+                    <h4 class="text-light">Sistemde henüz hiç sipariş bulunmuyor.</h4>
+                </div>`;
+            return;
+        }
+
+        alan.innerHTML = "";
+
+       
+        siparisler.reverse().forEach((siparis, index) => {
+            let urunListesiHtml = "";
+            siparis.urunler.forEach(u => {
+                urunListesiHtml += `<li class="text-info mb-1 fw-bold">🛒 ${u.isim} <span class="text-muted float-end fw-normal">${parseFloat(u.fiyat).toLocaleString('tr-TR')} ₺</span></li>`;
+            });
+
+            alan.innerHTML += `
+            <div class="siparis-karti p-4 shadow">
+                <div class="row">
+                    <div class="col-md-5 border-end border-secondary pe-4">
+                        <h5 class="text-warning fw-bold mb-3">Sipariş: ${siparis.siparisNo}</h5>
+                        <p class="text-light mb-1"><strong class="text-muted">Müşteri:</strong> ${siparis.musteri}</p>
+                        <p class="text-light mb-1"><strong class="text-muted">Tarih:</strong> ${siparis.tarih}</p>
+                        <div class="bg-dark p-2 rounded border border-secondary mt-3">
+                            <small class="text-muted d-block mb-1">📍 Teslimat Adresi:</small>
+                            <small class="text-light">${siparis.adres}</small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 ps-4">
+                        <h6 class="text-muted border-bottom border-secondary pb-1 mb-2">Satın Alınan Ürünler</h6>
+                        <ul class="list-unstyled mb-3 border-bottom border-secondary pb-3">
+                            ${urunListesiHtml}
+                        </ul>
+
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div>
+                                <span class="text-muted me-2">Toplam Tutar:</span>
+                                <span class="text-success fs-4 fw-bold">${siparis.toplam.toLocaleString('tr-TR')} ₺</span>
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-outline-info" onclick="Kargola(${index})">Kargoya Ver</button>
+                                <button class="btn btn-sm btn-outline-danger ms-2" onclick="SiparisSil(${index})">İptal Et</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        });
+    }
+
+    function Kargola(index) {
+        alert("Sipariş başarıyla kargoya verildi durumuna çekildi!");
+       
+    }
+
+    function SiparisSil(index) {
+        if(confirm("Bu siparişi iptal edip sistemden silmek istediğinize emin misiniz?")) {
+            let siparisler = JSON.parse(localStorage.getItem('UcuzTeknolojiSiparisler')) || [];
+            siparisler.reverse(); 
+            siparisler.splice(index, 1);
+            siparisler.reverse(); 
+            localStorage.setItem('UcuzTeknolojiSiparisler', JSON.stringify(siparisler));
+            AdminSiparisleriYukle();
+        }
+    }
+</script>

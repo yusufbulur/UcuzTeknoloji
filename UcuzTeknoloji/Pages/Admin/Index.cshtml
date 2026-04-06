@@ -1,0 +1,47 @@
+﻿@page
+@{
+    ViewData["Title"] = "Admin Kontrol Merkezi";
+}
+
+<div class="container mt-5 pt-5">
+    <h2 class="text-warning text-center mb-5 fw-bold">⚙️ YÖNETİM PANELİNE HOŞGELDİN</h2>
+    <div class="row justify-content-center gap-4">
+
+        <div class="col-md-3">
+            <a href="/Admin/Urunler" class="card bg-dark border-warning text-decoration-none h-100 shadow-lg" style="transition: 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="card-body text-center p-5">
+                    <h1 class="display-1">📦</h1>
+                    <h3 class="text-light mt-3 fw-bold">Ürünler</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="/Admin/UrunEkle" class="card bg-dark border-danger text-decoration-none h-100 shadow-lg" style="transition: 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="card-body text-center p-5">
+                    <h1 class="display-1">🛠️</h1>
+                    <h3 class="text-light mt-3 fw-bold">Sistem / Ürün Oluştur</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="/Admin/SistemOlustur" class="card bg-dark border-success text-decoration-none h-100 shadow-lg" style="transition: 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="card-body text-center p-5">
+                    <h1 class="display-1">🖥️</h1>
+                    <h3 class="text-light mt-3 fw-bold">Sistem / Kasa Diz</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="/Admin/Siparisler" class="card bg-dark border-success text-decoration-none h-100 shadow-lg" style="transition: 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="card-body text-center p-5">
+                    <h1 class="display-1">📦</h1>
+                    <h3 class="text-light mt-3 fw-bold">Gelen Siparişler</h3>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>

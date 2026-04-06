@@ -1,0 +1,189 @@
+﻿@page
+@model UcuzTeknoloji.Pages.ProfilModel
+@{
+    ViewData["Title"] = "Hesabım";
+}
+
+<style>
+    body {
+        background-color: #0b0b0b;
+        color: #fff;
+    }
+
+    .profil-sidebar {
+        background-color: #151515;
+        border-right: 1px solid #333;
+        min-height: 70vh;
+        padding: 20px;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .profil-content {
+        background-color: #121212;
+        padding: 40px;
+        border-radius: 0 10px 10px 0;
+        border: 1px solid #333;
+        border-left: none;
+    }
+
+    .nav-pills .nav-link {
+        color: #ccc;
+        font-weight: bold;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
+
+        .nav-pills .nav-link.active, .nav-pills .nav-link:hover {
+            background-color: #f96302;
+            color: #fff;
+        }
+
+    .form-control {
+        background-color: #1e1e1e;
+        border: 1px solid #444;
+        color: #fff;
+        padding: 12px;
+    }
+
+        .form-control:focus {
+            background-color: #252525;
+            border-color: #f96302;
+            color: #fff;
+            box-shadow: 0 0 8px rgba(249, 99, 2, 0.5);
+        }
+
+    .adres-karti {
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+        padding: 20px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+        .adres-karti:hover {
+            border-color: #f96302;
+        }
+</style>
+
+<div class="container mt-5 mb-5 shadow-lg">
+    <input type="hidden" id="profilSahibiAdi" value="@Model.AktifKullanici?.UserName" />
+    <div class="row g-0">
+        <div class="col-md-3 profil-sidebar">
+            <div class="text-center mb-4 pb-3 border-bottom border-secondary">
+                <div class="bg-dark rounded-circle d-inline-flex justify-content-center align-items-center border border-warning" style="width: 80px; height: 80px;">
+                    <h2 class="text-warning m-0">👤</h2>
+                </div>
+                <h5 class="text-light mt-3 fw-bold">@Model.AktifKullanici?.UserName</h5>
+                <small class="text-muted">Kayıtlı Üye</small>
+            </div>
+
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active text-start" data-bs-toggle="pill" data-bs-target="#hesap-bilgileri">⚙️ Hesap Bilgilerim</button>
+                <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#adreslerim">📍 Adreslerim</button>
+                <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#siparislerim">📦 Siparişlerim</button>
+            </div>
+        </div>
+
+        <div class="col-md-9 profil-content">
+            <div class="tab-content" id="v-pills-tabContent">
+
+                <div class="tab-pane fade show active" id="hesap-bilgileri">
+                    <h3 class="text-warning border-bottom border-secondary pb-2 mb-4">Hesap Bilgilerim</h3>
+                    <form method="post" asp-page-handler="BilgiGuncelle">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="text-muted small fw-bold mb-1">Kullanıcı Adı</label>
+                                <input type="text" class="form-control" value="@Model.AktifKullanici?.UserName" disabled />
+                                <small class="text-danger">Kullanıcı adı değiştirilemez.</small>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="text-muted small fw-bold mb-1">E-Posta Adresi</label>
+                                <input type="email" class="form-control" value="@Model.AktifKullanici?.Email" disabled />
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="text-light small fw-bold mb-1">Telefon Numarası</label>
+                                <input type="text" asp-for="TelefonNumarasi" class="form-control border-warning" placeholder="Örn: 0555 555 55 55" />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-warning fw-bold px-4 py-2">💾 Bilgileri Güncelle</button>
+                    </form>
+                </div>
+
+                <div class="tab-pane fade" id="adreslerim">
+                    <div class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-2 mb-4">
+                        <h3 class="text-warning m-0">Kayıtlı Adreslerim</h3>
+                        <button class="btn btn-outline-warning btn-sm fw-bold" onclick="alert('Adres ekleme modülü yakında aktif edilecek!')">+ Yeni Adres Ekle</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="adres-karti">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <h6 class="text-light fw-bold m-0">Ev Adresi</h6>
+                                    <span class="badge bg-success">Varsayılan</span>
+                                </div>
+                                <p class="text-muted small mb-3">Onurkent Mah. Başakşehir Blv. No:45 Kat:3 Daire:12 Başakşehir / İstanbul</p>
+                                <button class="btn btn-sm btn-secondary">Düzenle</button>
+                                <button class="btn btn-sm btn-danger">Sil</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="siparislerim">
+                    <h3 class="text-warning border-bottom border-secondary pb-2 mb-4">Geçmiş Siparişlerim</h3>
+
+                    <div id="siparislerimListesi">
+                        <div class="alert alert-dark border border-secondary text-center p-5">
+                            <h1 class="display-4 text-muted mb-3">🛍️</h1>
+                            <h5 class="text-light">Henüz hiç sipariş vermemişsin knk!</h5>
+                            <a href="/Index" class="btn btn-warning fw-bold mt-2 text-dark">Alışverişe Başla</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", SiparisleriYukle);
+
+    function SiparisleriYukle() {
+        let butunSiparisler = JSON.parse(localStorage.getItem('UcuzTeknolojiSiparisler')) || [];
+        let alan = document.getElementById('siparislerimListesi');        
+        let profilSahibi = document.getElementById('profilSahibiAdi').value;
+        let benimSiparislerim = butunSiparisler.filter(s => s.hesapKullaniciAdi === profilSahibi);
+
+        if (benimSiparislerim.length > 0) {
+            alan.innerHTML = ""; 
+
+            benimSiparislerim.reverse().forEach(siparis => {
+                let urunListesiHtml = "";
+                siparis.urunler.forEach(u => {
+                    urunListesiHtml += `<li class="text-light mb-1">📦 ${u.isim} <span class="float-end text-muted">${parseFloat(u.fiyat).toLocaleString('tr-TR')} ₺</span></li>`;
+                });
+
+                alan.innerHTML += `
+                    <div class="bg-dark border border-secondary p-4 rounded mb-4 shadow">
+                        <div class="d-flex justify-content-between border-bottom border-secondary pb-2 mb-3">
+                            <span class="text-warning fw-bold fs-5">Sipariş No: ${siparis.siparisNo}</span>
+                            <span class="text-muted"><i class="fa fa-calendar"></i> ${siparis.tarih}</span>
+                        </div>
+                        <ul class="list-unstyled mb-3 border-bottom border-secondary pb-3">
+                            ${urunListesiHtml}
+                        </ul>
+                        <div class="text-end">
+                            <span class="text-muted">Ödenen Tutar:</span>
+                            <span class="text-success fs-4 fw-bold ms-2">${siparis.toplam.toLocaleString('tr-TR')} ₺</span>
+                        </div>
+                        <div class="text-end mt-2">
+                            <span class="badge bg-success">Sipariş Alındı, Hazırlanıyor</span>
+                        </div>
+                    </div>`;
+            });
+        }
+    }
+</script>

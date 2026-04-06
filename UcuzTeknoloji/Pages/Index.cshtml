@@ -1,0 +1,391 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "UcuzTeknoloji - Efsane Fırsatlar";
+    var sistemler = Model.Products.Where(p => p.CategoryId == 1).ToList();
+    var parcalar = Model.Products.Where(p => p.CategoryId == 2).ToList();
+    var ekipmanlar = Model.Products.Where(p => p.CategoryId == 3).ToList();
+}
+
+<style>
+    /* İTOPYA STİLİ CSS */
+    body {
+        background-color: #0b0b0b;
+        color: #fff;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Sol Dikey Menü */
+    .vertical-menu {
+        background-color: #151515;
+        border-radius: 8px;
+        border: 1px solid #222;
+        overflow: hidden;
+    }
+
+    .vertical-menu-header {
+        background-color: #f96302;
+        color: #fff;
+        font-weight: 900;
+        padding: 15px;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .vertical-menu a {
+        display: block;
+        padding: 12px 20px;
+        color: #ccc;
+        text-decoration: none;
+        border-bottom: 1px solid #222;
+        transition: all 0.3s;
+        font-weight: 500;
+    }
+
+        .vertical-menu a:hover {
+            background-color: #222;
+            color: #f96302;
+            padding-left: 25px;
+            border-left: 4px solid #f96302;
+        }
+
+        .vertical-menu a i {
+            width: 25px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+    /* Ürün Kartları */
+    .product-card {
+        background-color: #151515;
+        border: 1px solid #222;
+        border-radius: 8px;
+        transition: 0.3s;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .product-card:hover {
+            border-color: #f96302;
+            box-shadow: 0 10px 20px rgba(249, 99, 2, 0.15);
+            transform: translateY(-5px);
+            z-index: 2;
+        }
+
+    .product-img-wrapper {
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .product-img-wrapper img {
+            max-height: 160px;
+            max-width: 100%;
+            object-fit: contain;
+            transition: 0.3s;
+        }
+
+    .product-card:hover .product-img-wrapper img {
+        transform: scale(1.05);
+    }
+
+    /* Etiketler */
+    .badge-discount {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #ff0000;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 0.8rem;
+        z-index: 3;
+    }
+
+    .badge-stock {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #28a745;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 0.8rem;
+        z-index: 3;
+    }
+
+    /* Alt Kısım (Yazılar ve Fiyat) */
+    .product-info {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-title {
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        margin-bottom: 15px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+        .product-title:hover {
+            color: #f96302;
+        }
+
+    .price-box {
+        margin-top: auto;
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: #777;
+        font-size: 0.9rem;
+    }
+
+    .new-price {
+        color: #f96302;
+        font-size: 1.6rem;
+        font-weight: 900;
+    }
+
+    /* Buton */
+    .btn-cart {
+        background-color: #f96302;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        transition: 0.3s;
+        margin-top: 15px;
+    }
+
+        .btn-cart:hover {
+            background-color: #e05802;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+    /* Bölüm Başlıkları */
+    .section-header {
+        border-bottom: 2px solid #222;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+        .section-header h3 {
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 0;
+            color: #fff;
+        }
+
+        .section-header span {
+            color: #f96302;
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+    /* Afişler */
+    .promo-banner {
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid #222;
+        transition: 0.3s;
+    }
+
+        .promo-banner:hover {
+            border-color: #f96302;
+        }
+
+        .promo-banner img {
+            width: 100%;
+            height: auto;
+            transition: 0.5s;
+            filter: brightness(70%);
+        }
+
+        .promo-banner:hover img {
+            transform: scale(1.03);
+            filter: brightness(100%);
+        }
+</style>
+
+<div class="container-fluid mt-3 px-4">
+    <div class="row">
+        <div class="col-lg-3 d-none d-lg-block mb-4">
+            <div class="vertical-menu shadow-sm sticky-top" style="top: 20px;">
+                <div class="vertical-menu-header">
+                    ☰ KATEGORİLER
+                </div>
+                <ul class="list-unstyled">
+                    <li><a href="/Urunler?kategori=Mouse" class="text-light">🖱️ Mouse</a></li>
+                    <li><a href="/Urunler?kategori=Anakart" class="text-light">🗄️ Anakart</a></li>
+                    <li><a href="/Urunler?kategori=İşlemci" class="text-light">🧠 İşlemci</a></li>
+                    <li><a href="/Urunler?kategori=Kulaklık" class="text-light">🎧 Kulaklık</a></li>
+                    <li><a href="/Urunler" class="text-warning fw-bold">Tüm Ürünler</a></li>
+                </ul>
+
+                <div class="mt-4 p-3 text-center border-top border-secondary bg-dark">
+                    <h6 class="text-light fw-bold">KARGO BEDAVA!</h6>
+                    <p class="text-muted small m-0">2.000 TL ve üzeri alışverişlerde tüm Türkiye'ye ücretsiz kargo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+
+            <div id="mainCarousel" class="carousel slide mb-4 rounded overflow-hidden shadow-lg border border-secondary" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200&h=450&fit=crop" class="d-block w-100" style="object-fit: cover; height: 400px; filter: brightness(60%);">
+                        <div class="carousel-caption d-none d-md-block text-start" style="bottom: 40px; left: 50px;">
+                            <span class="badge bg-danger fs-6 mb-2 p-2">HAFTASONU FIRSATI</span>
+                            <h1 class="display-5 fw-bold text-white text-uppercase" style="text-shadow: 2px 2px 4px #000;">Gamer Kasalarda<br><span style="color: #f96302;">Dev İndirim</span></h1>
+                            <p class="fs-5 text-light">RTX 5000 Serisi Sistemler Stoklarda! Hemen topla.</p>
+                            <button class="btn btn-cart w-auto px-5 py-3 fs-5">SİSTEMLERİ İNCELE</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200&h=450&fit=crop" class="d-block w-100" style="object-fit: cover; height: 400px; filter: brightness(60%);">
+                        <div class="carousel-caption d-none d-md-block text-end" style="bottom: 40px; right: 50px;">
+                            <span class="badge bg-warning text-dark fs-6 mb-2 p-2">YENİ ÜRÜNLER</span>
+                            <h1 class="display-5 fw-bold text-white text-uppercase" style="text-shadow: 2px 2px 4px #000;">Profesyonel<br><span style="color: #f96302;">Ekipmanlar</span></h1>
+                            <button class="btn btn-light text-dark fw-bold w-auto px-5 py-3 fs-5 mt-3">HEMEN AL</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <div class="promo-banner">
+                        <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=600&h=200&fit=crop" alt="Promo 1">
+                        <div class="position-absolute bottom-0 start-0 p-4">
+                            <h4 class="text-white fw-bold m-0" style="text-shadow: 1px 1px 3px #000;">İNTEL İŞLEMCİLER</h4>
+                            <p class="text-warning fw-bold m-0">%15'e Varan İndirimler</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="promo-banner">
+                        <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=600&h=200&fit=crop" alt="Promo 2">
+                        <div class="position-absolute bottom-0 start-0 p-4">
+                            <h4 class="text-white fw-bold m-0" style="text-shadow: 1px 1px 3px #000;">OYUNCU MONİTÖRLERİ</h4>
+                            <p class="text-warning fw-bold m-0">144Hz ve Üzeri Seçenekler</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hazir-sistemler" class="section-header">
+                <span>⚡</span><h3>HAZIR SİSTEMLER</h3>
+            </div>
+            <div class="row mb-5">
+                @foreach (var item in sistemler)
+                {
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="product-card">
+                            <div class="badge-discount">%10 İndirim</div>
+                            @if (item.Stock > 0)
+                            {
+                                <div class="badge-stock">Stokta</div>
+                            }
+                            else
+                            {
+                                <div class="badge-stock bg-danger">Tükendi</div>
+                            }
+
+                            <div class="product-img-wrapper">
+                                <img src="@(string.IsNullOrEmpty(item.ImagePath) ? "https://via.placeholder.com/250x250?text=Resim+Yok" : "/img/" + item.ImagePath)" alt="@item.Name">
+                            </div>
+
+                            <div class="product-info">
+                                <a href="/SistemDetay/@item.Id" class="product-title">@item.Name</a>
+                                <div class="price-box">
+                                    <div class="old-price">@((item.Price * 1.1m).ToString("N0")) ₺</div>
+                                    <div class="new-price">@item.Price.ToString("N0") ₺</div>
+                                </div>
+                                <button type="button" onclick="HizliSepeteAt('@item.Name', @item.Price.ToString().Replace(",", "."))" class="btn btn-warning w-100 fw-bold">
+                                    🛒 HIZLI SEPETE EKLE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (!sistemler.Any())
+                {
+                    <p class="text-muted">Henüz hazır sistem eklenmemiş.</p>
+                }
+            </div>
+
+            <div id="oyuncu-ekipmanlari" class="section-header">
+                <span>🎧</span><h3>OYUNCU EKİPMANLARI</h3>
+            </div>
+            <div class="row mb-5">
+                @foreach (var item in ekipmanlar)
+                {
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="@(string.IsNullOrEmpty(item.ImagePath) ? "https://via.placeholder.com/250x250?text=Resim+Yok" : "/img/" + item.ImagePath)" alt="@item.Name">
+                            </div>
+                            <div class="product-info p-3">
+                                <a href="#" class="product-title" style="font-size: 0.85rem; margin-bottom: 5px;">@item.Name</a>
+                                <div class="price-box mt-2">
+                                    <div class="new-price" style="font-size: 1.3rem;">@item.Price.ToString("N0") ₺</div>
+                                </div>
+                                <button type="button" onclick="HizliSepeteAt('@item.Name', @item.Price.ToString().Replace(",", "."))" class="btn btn-warning w-100 fw-bold">
+                                    🛒 HIZLI SEPETE EKLE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (!ekipmanlar.Any())
+                {
+                    <p class="text-muted">Henüz ekipman eklenmemiş.</p>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function HizliSepeteAt(urunAdi, fiyat) {
+        let sepet = JSON.parse(localStorage.getItem('UcuzTeknolojiSepet')) || [];
+        sepet.push({ isim: urunAdi, fiyat: fiyat });
+        localStorage.setItem('UcuzTeknolojiSepet', JSON.stringify(sepet));
+        let navSepet = document.getElementById('navSepetSayisi');
+        if (navSepet) navSepet.innerText = sepet.length;
+        alert("✅ " + urunAdi + " anında sepete eklendi!");
+    }
+</script>

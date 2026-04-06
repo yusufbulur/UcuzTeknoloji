@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - UcuzTeknoloji</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        /* İtopya Tarzı Karanlık Tema */
+        body { background-color: #121212; color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar { background-color: #1e1e1e !important; border-bottom: 2px solid #ff6600; }
+        .nav-link { font-weight: 500; transition: color 0.3s; }
+        .nav-link:hover { color: #ff6600 !important; }
+        .brand-logo { color: #ff6600; font-weight: 900; font-style: italic; font-size: 1.5rem; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4 shadow-sm border-bottom border-warning">
+            <div class="container">
+                <a class="navbar-brand text-warning fw-bold fs-4" asp-area="" asp-page="/Index">UcuzTeknoloji</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link text-light" asp-page="/Index">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#sistemler">Hazır Sistemler</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#ekipmanlar">Ekipmanlar</a></li>
+
+                        @if (User.Identity.IsAuthenticated && User.Identity.Name == "SistemAdmin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-danger fw-bold px-3 border border-danger rounded ms-2" asp-page="/Admin/Index" style="background-color: rgba(255,0,0,0.1);">⚙️ Admin Paneli</a>
+                            </li>
+                        }
+                    </ul>
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item me-3">
+                                <a class="nav-link text-warning fw-bold" asp-page="/Sepet">🛒 Sepetim (<span id="navSepetSayisi">0</span>)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-success fw-bold" asp-page="/Profil">👤 @User.Identity.Name</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-page="/Hesap/CikisYap" class="nav-link text-danger fw-bold">Çıkış Yap</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-page="/Hesap/GirisYap">Giriş Yap</a></li>
+                            <li class="nav-item"><a class="nav-link btn btn-warning text-dark fw-bold px-3 ms-2" asp-page="/Hesap/KayitOl">Kayıt Ol</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+   
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    
+
+    <footer class="border-top border-secondary footer text-muted mt-5 py-3" style="background-color: #1e1e1e;">
+        <div class="container text-center">
+            &copy; 2026 - UcuzTeknoloji - Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

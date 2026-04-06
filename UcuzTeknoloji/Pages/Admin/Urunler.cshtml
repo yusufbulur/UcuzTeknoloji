@@ -1,0 +1,146 @@
+﻿@page
+@model UcuzTeknoloji.Pages.Admin.UrunlerModel
+@{
+    ViewData["Title"] = "Ürün Yönetimi";
+}
+
+<div class="container-fluid mt-3">
+    <div class="d-flex justify-content-end mb-4 gap-2 border-bottom border-secondary pb-3">
+        <button class="btn btn-outline-info fw-bold">📁 Kategori Oluştur</button>
+        <a href="/Admin/UrunEkle" class="btn btn-warning text-dark fw-bold">➕ Yeni Ürün Oluştur / Ekle</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="bg-dark border border-secondary rounded p-3 h-100">
+                <h5 class="text-warning border-bottom border-warning pb-2">Filtreler</h5>
+                <ul class="list-unstyled mt-3" id="dinamikFiltreMenusu">
+                    <li class="mb-2"><a href="javascript:void(0)" onclick="Filtrele('Tumu', '')" class="text-light fw-bold text-decoration-none">Tüm Ürünler</a></li>
+                    <li class="mb-2"><a href="javascript:void(0)" onclick="Filtrele('AnaKategori', '1')" class="text-light text-decoration-none">Kasa / Sistemler</a></li>
+                    <li class="mb-2"><a href="javascript:void(0)" onclick="Filtrele('AnaKategori', '2')" class="text-light text-decoration-none">Parçalar</a></li>
+                    <li class="mb-2"><a href="javascript:void(0)" onclick="Filtrele('AnaKategori', '3')" class="text-light text-decoration-none">Ekipmanlar</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <input type="text" id="aramaKutusu" class="form-control bg-dark text-light border-secondary mb-4 w-50 p-3 fs-5" placeholder="Ürün adına göre ara (Örn: RAM)..." onkeyup="UrunAra()">
+
+            <div class="row" id="urunTablosu">
+                @foreach (var item in Model.Products)
+                {
+                    var sablonDegeri = item.Features.FirstOrDefault(f => f.FeatureName == "KategoriŞablonu")?.FeatureValue ?? "";
+
+                    <div class="col-md-3 mb-4 urun-kart-alani">
+                        <div class="card bg-dark border-secondary h-100 position-relative">
+                            <button class="btn btn-sm btn-info position-absolute top-0 start-0 m-2 rounded-circle" style="z-index:10; width: 35px; height: 35px;" data-bs-toggle="modal" data-bs-target="#detayModal-@item.Id">🔍</button>
+                            <div class="p-3 bg-white rounded-top text-center" style="height: 180px;">
+                                <img src="/img/@item.ImagePath" class="img-fluid h-100 object-fit-contain" />
+                            </div>
+                            <form method="post" asp-page-handler="UrunSil" asp-route-id="@item.Id" class="position-absolute top-0 end-0 m-2" style="z-index: 10;" onsubmit="return confirm('Bu ürünü kalıcı olarak siliyorum, emin misin knk?');">
+                                <button type="submit" class="btn btn-sm btn-danger rounded-circle shadow" style="width: 35px; height: 35px;" title="Ürünü Sil">🗑️</button>
+                            </form>
+
+                            <button class="btn btn-sm btn-info position-absolute top-0 start-0 m-2 rounded-circle" style="z-index:10; width: 35px; height: 35px;" data-bs-toggle="modal" data-bs-target="#detayModal-@item.Id">🔍</button>
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="text-light fw-bold urun-adi">@item.Name</h6>
+                                <span class="badge bg-danger position-absolute end-0 me-2 fs-6 shadow" style="top: 50px; z-index: 5;">Stok: @item.Stock</span>
+                                <hr class="border-secondary my-2">
+                                <p class="text-muted small mb-1">Marka/Renk: (Fix Özellikler)</p>
+                                <h4 class="text-warning mt-auto mb-0">@item.Price.ToString("N0") ₺</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="detayModal-@item.Id" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                            <form method="post" asp-page-handler="UrunGuncelle" class="modal-content bg-dark border-warning text-light">
+                                <div class="modal-header border-secondary">
+                                    <h5 class="modal-title text-warning">Ürünü Düzenle</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body row">
+                                    <input type="hidden" name="UrunId" value="@item.Id" />
+
+                                    <div class="col-md-5 text-center">
+                                        <img src="/img/@item.ImagePath" class="img-fluid rounded mb-3" />
+                                        <label class="text-info small fw-bold">Ürün Adı</label>
+                                        <input type="text" name="UrunAdi" class="form-control bg-secondary text-light mb-2" value="@item.Name" required />
+
+                                        <label class="text-info small fw-bold">Fiyat (₺)</label>
+                                        <input type="number" name="UrunFiyati" class="form-control bg-secondary text-light mb-2" value="@item.Price" required />
+
+                                        <label class="text-danger small fw-bold">Stok Adedi</label>
+                                        <input type="number" name="UrunStogu" class="form-control bg-secondary text-light" value="@item.Stock" required />
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <h6 class="text-warning border-bottom border-warning pb-1">Teknik Özellikleri Düzenle:</h6>
+                                        <div class="row">
+                                            @foreach (var feature in item.Features)
+                                            {
+                                                <div class="col-6 mb-2">
+                                                    <label class="small text-muted mb-1">@feature.FeatureName</label>
+                                                    <input type="text" name="Feature_@feature.Id" class="form-control bg-dark text-light border-secondary" value="@feature.FeatureValue" />
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer border-secondary">
+                                    <button type="submit" class="btn btn-warning w-100 fw-bold text-dark">💾 Değişiklikleri Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let sablonlar = JSON.parse(localStorage.getItem("BenimSablonlarim")) || [];
+        let menu = document.getElementById("dinamikFiltreMenusu");
+
+        if (sablonlar.length > 0) {
+            menu.innerHTML += `<li class="mt-4 mb-2 text-info small fw-bold border-bottom border-secondary pb-1">ÖZEL KATEGORİLER</li>`;
+            sablonlar.forEach(s => {
+              
+                menu.innerHTML += `<li class="mb-2"><a href="javascript:void(0)" onclick="Filtrele('OzelSablon', '${s.isim}')" class="text-warning text-decoration-none">📌 ${s.isim}</a></li>`;
+            });
+        }
+    });
+
+    function Filtrele(tur, deger) {
+        let kartlar = document.querySelectorAll(".urun-kart-alani");
+        let arananDeger = deger.toLowerCase().trim();
+
+        kartlar.forEach(kart => {
+            if (tur === 'Tumu') {
+                kart.style.display = "block";
+            }
+            else if (tur === 'AnaKategori') {
+                if (kart.getAttribute('data-kategori') === deger) { kart.style.display = "block"; }
+                else { kart.style.display = "none"; }
+            }
+            else if (tur === 'OzelSablon') {
+                let kartinSablonu = (kart.getAttribute('data-sablon') || "").toLowerCase().trim();
+                if (kartinSablonu === arananDeger) { kart.style.display = "block"; }
+                else { kart.style.display = "none"; }
+            }
+        });
+    }
+    
+    function UrunAra() {
+        let deger = document.getElementById("aramaKutusu").value.toLowerCase();
+        let kartlar = document.querySelectorAll(".urun-kart-alani");
+
+        kartlar.forEach(kart => {
+            let isim = kart.querySelector(".urun-adi").innerText.toLowerCase();
+            if(isim.includes(deger)) { kart.style.display = "block"; }
+            else { kart.style.display = "none"; }
+        });
+    }
+</script>

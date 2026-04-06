@@ -1,0 +1,115 @@
+﻿@page
+@{
+    ViewData["Title"] = "Alışveriş Sepetim";
+}
+
+<style>
+    body { background-color: #0b0b0b; color: #fff; }
+    .sepet-karti { background-color: #151515; border: 1px solid #333; border-radius: 8px; padding: 25px; }
+    .sepet-urun { border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 15px; }
+    .sepet-ozet { background-color: #1a1a1a; border: 1px solid #f96302; border-radius: 8px; padding: 25px; position: sticky; top: 20px; }
+</style>
+
+<div class="container mt-5 mb-5">
+    <h2 class="text-warning fw-bold mb-4">🛒 Alışveriş Sepetim</h2>
+
+    <div class="row">
+        <div class="col-lg-8 mb-4">
+            <div class="sepet-karti" id="sepetUrunlerAlani">
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="sepet-ozet shadow-lg">
+                <h4 class="text-light fw-bold border-bottom border-secondary pb-2 mb-4">Sipariş Özeti</h4>
+
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="text-muted">Ürünler Toplamı</span>
+                    <span class="text-light fw-bold" id="ozetAraToplam">0 ₺</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="text-muted">Kargo Ücreti</span>
+                    <span class="text-success fw-bold">Ücretsiz</span>
+                </div>
+
+                <hr class="border-secondary mb-3" />
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <span class="text-light fs-5">Ödenecek Tutar</span>
+                    <span class="text-warning fs-3 fw-bold" id="ozetGenelToplam">0 ₺</span>
+                </div>
+
+                <button class="btn btn-warning btn-lg w-100 fw-bold shadow text-dark" onclick="SiparisTamamla()">💳 GÜVENLİ ÖDEME YAP</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", SepetiYukle);
+
+    function SepetiYukle() {
+        let sepet = JSON.parse(localStorage.getItem('UcuzTeknolojiSepet')) || [];
+        let alan = document.getElementById('sepetUrunlerAlani');
+        let araToplam = 0;
+
+        if (sepet.length === 0) {
+            alan.innerHTML = `
+                <div class="text-center p-5">
+                    <h1 class="display-1 text-muted">🛒</h1>
+                    <h4 class="text-light mt-3">Sepetin şu an bomboş.</h4>
+                    <a href="/Index" class="btn btn-outline-warning mt-3">Alışverişe Devam Et</a>
+                </div>`;
+            document.getElementById('ozetAraToplam').innerText = "0 ₺";
+            document.getElementById('ozetGenelToplam').innerText = "0 ₺";
+            return;
+        }
+
+        alan.innerHTML = "";
+        sepet.forEach((urun, index) => {
+            araToplam += parseFloat(urun.fiyat);
+            alan.innerHTML += `
+                <div class="row align-items-center sepet-urun">
+                    <div class="col-md-2 text-center">
+                        <h1 class="m-0 text-secondary">📦</h1>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="text-light m-0">${urun.isim}</h5>
+                        <small class="text-success">Stokta Var</small>
+                    </div>
+                    <div class="col-md-3 text-end">
+                        <h4 class="text-warning m-0">${parseFloat(urun.fiyat).toLocaleString('tr-TR')} ₺</h4>
+                    </div>
+                    <div class="col-md-1 text-end">
+                        <button class="btn btn-sm btn-outline-danger" onclick="SepettenSil(${index})">X</button>
+                    </div>
+                </div>
+            `;
+        });
+
+        document.getElementById('ozetAraToplam').innerText = araToplam.toLocaleString('tr-TR') + " ₺";
+        document.getElementById('ozetGenelToplam').innerText = araToplam.toLocaleString('tr-TR') + " ₺";
+
+       
+        let navSepet = document.getElementById('navSepetSayisi');
+        if(navSepet) navSepet.innerText = sepet.length;
+    }
+
+    function SepettenSil(index) {
+        let sepet = JSON.parse(localStorage.getItem('UcuzTeknolojiSepet')) || [];
+        sepet.splice(index, 1);
+        localStorage.setItem('UcuzTeknolojiSepet', JSON.stringify(sepet));
+        SepetiYukle();
+    }
+
+    function SiparisTamamla() {
+        let sepet = JSON.parse(localStorage.getItem('UcuzTeknolojiSepet')) || [];
+        if (sepet.length === 0) {
+            alert("Sepetiniz boş! Önce birkaç parça ekleyin.");
+            return;
+        }
+
+      
+        window.location.href = "/OdemeYap";
+    }
+</script>
